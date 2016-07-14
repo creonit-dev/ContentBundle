@@ -9,7 +9,7 @@
   "license": "GNU GPLv3",
   "autoload": {
     "psr-4": {
-      "Creonit\\ContentBundle\\": ""
+      "Creonit\\ContentBundle\\": "src"
     }
   }
 }
