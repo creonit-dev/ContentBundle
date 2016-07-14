@@ -1,0 +1,15 @@
+{
+  "name": "creonit/content-bundle",
+  "keywords": [
+    "creonit",
+    "symfony",
+    "bundle",
+    "content"
+  ],
+  "license": "GNU GPLv3",
+  "autoload": {
+    "psr-4": {
+      "Creonit\\ContentBundle\\": ""
+    }
+  }
+}

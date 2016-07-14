@@ -1,0 +1,22 @@
+config:
+    required: true
+
+database:
+    +:
+        name: default
+        namespace: Creonit\ContentBundle\Model
+        defaultIdMethod: native
+
+    +vendor:
+        type: mysql
+        parameters:
+            Engine: InnoDB
+            Charset: utf8
+
+    +behavior:
+        - auto_add_pk
+
+    content:
+        text: text
+        completed: bool = 0
+        +behavior: [timestampable]

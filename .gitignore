@@ -1,0 +1,11 @@
+/.idea/
+/*.sublime-project
+/*.sublime-workspace
+thumbs.db
+
+/Model/Base
+/Model/Map
+/Resources/config/schema.xml
+
+/node_modules/
+/bower_components/
