@@ -15,7 +15,7 @@ class ContentPlugin extends Plugin
         $this->addJavascript('/bundles/creonitcontent/js/common.js');
         $this->addStylesheet('/bundles/creonitcontent/css/common.css');
 
-        $this->addInjection('head', '<script>var CreonitContentTypes = ' . json_encode($this->types) . ';</script>');
+        $this->addInjection('head_script', 'var CreonitContentTypes = ' . json_encode($this->types) . ';');
         
         $this->addFieldType(ContentField::class);
     }
