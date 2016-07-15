@@ -3,8 +3,8 @@
 /*.sublime-workspace
 thumbs.db
 
-/src/Model/Base
-/src/Model/Map
+/src/Model/Base/
+/src/Model/Map/
 /src/Resources/config/schema.xml
 
 /node_modules/
