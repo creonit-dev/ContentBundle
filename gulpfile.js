@@ -83,17 +83,9 @@ gulp.task('js', function(callback){
 });
 
 /**
- * @task sync
- */
-gulp.task('sync', function(){
-    browserSync = require('browser-sync');
-    browserSync({proxy: path.basename(__dirname.replace(/[\/\\]vendor[\/\\]creonit[\/\\]content-bundle$/, '')), open: false, notify: false, ghostMode: false});
-});
-
-/**
  * @task watch
  */
-gulp.task('watch', ['sync'], function(){
+gulp.task('watch', function(){
     gulp.watch('./assets/css/*.styl', ['css']);
     gulp.watch(['./assets/js/**/*.js', './assets/js/**/*.ts', '!./assets/js/vendor/**/*.js', '!./assets/js/vendor/**/*.ts'], ['js']);
 

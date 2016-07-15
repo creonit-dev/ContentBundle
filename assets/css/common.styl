@@ -1,8 +1,37 @@
-$block-width = 997px
-$block-padding = 10px
-$footer-height = 360px
-$header-height = 118px
+.component-field-content{
 
+   &-types{
+      display inline-block
+      font-size 11px
+      margin-bottom 5px
 
-//@import 'phast/layout'
-@import "admin/*"
+      /.form-group > & {
+         margin-left 10px
+         margin-bottom 0
+      }
+
+      &.is-hidden{
+         visibility hidden
+      }
+
+      a{
+         margin-right 10px
+
+         &.is-active{
+            pointer-events none
+            color #999
+            outline none
+            text-decoration none
+         }
+
+         i{
+            margin-right 3px
+         }
+      }
+   }
+
+   &-type{
+      display none
+   }
+
+}

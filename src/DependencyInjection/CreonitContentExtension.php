@@ -24,5 +24,16 @@ class CreonitContentExtension extends Extension
 
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
+        
+        $content = $container->getDefinition('creonit_admin.content_plugin');
+        $content->addMethodCall('setType', ['text', [
+            'title' => 'Текст',
+        ]]);
+
+        if(isset($config['types'])){
+            foreach($config['types'] as $key => $editor){
+                $content->addMethodCall('setType', [$key, $editor]);
+            }
+        }
     }
 }
