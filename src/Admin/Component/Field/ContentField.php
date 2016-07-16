@@ -27,7 +27,6 @@ class ContentField extends Field
     public function decorate($data)
     {
         if($data){
-            dump($data);
             $content = ContentQuery::create()->findPk($data);
 
             return [

@@ -19,7 +19,7 @@ module Creonit.Admin.Component.Helpers {
         return `
             <div class="component-field-content-types ${allowedTypes.length < 2 ? 'is-hidden' : ''}"> 
                 ${allowedTypes.map(function(type){
-                    return `<a href="#" data-component="${type.component || ''}" data-name="${type.name}"><i class="fa fa-${type.icon || 'pencil-square-o'}"></i>${type.title}</a>`;
+                    return `<a href="#" data-component="${type.component || ''}" data-id="${value.id}" data-name="${type.name}"><i class="fa fa-${type.icon || 'pencil-square-o'}"></i>${type.title}</a>`;
                 }).join('')}
             </div>
             <div class="component-field-content" data-name="${name}">
@@ -64,7 +64,7 @@ module Creonit.Admin{
                 $contentType.show();
 
                 if($(this).data('component') && !$contentType.find(`[${Admin.Component.Utils.ATTR_HANDLER}]`).data('creonit-component-initialized')){
-                    $contentType.append(Admin.Component.Helpers.component($(this).data('component'), {}, {}));
+                    $contentType.append(Admin.Component.Helpers.component($(this).data('component'), {content: $(this).data('id')}, {}));
                     Admin.Component.Utils.initializeComponents($contentType, component);
                 }
             });

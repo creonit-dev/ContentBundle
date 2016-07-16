@@ -18,7 +18,7 @@ var Creonit;
                         }
                     });
                     return "\n            <div class=\"component-field-content-types " + (allowedTypes.length < 2 ? 'is-hidden' : '') + "\"> \n                " + allowedTypes.map(function (type) {
-                        return "<a href=\"#\" data-component=\"" + (type.component || '') + "\" data-name=\"" + type.name + "\"><i class=\"fa fa-" + (type.icon || 'pencil-square-o') + "\"></i>" + type.title + "</a>";
+                        return "<a href=\"#\" data-component=\"" + (type.component || '') + "\" data-id=\"" + value.id + "\" data-name=\"" + type.name + "\"><i class=\"fa fa-" + (type.icon || 'pencil-square-o') + "\"></i>" + type.title + "</a>";
                     }).join('') + "\n            </div>\n            <div class=\"component-field-content\" data-name=\"" + name + "\">\n                " + allowedTypes.map(function (type) {
                         return "\n                        <div class=\"component-field-content-type\" data-name=\"" + type.name + "\">\n                            " + (type.component ? '' : Helpers.textedit(value.text, [name + '__text', {}])) + "\n                        </div>\n                    ";
                     }).join('') + "\n            </div>\n            <input type=\"hidden\" name=\"" + name + "\" value=\"" + value.id + "\">\n        ";
@@ -45,7 +45,7 @@ var Creonit;
                     $contentTypes.hide();
                     $contentType.show();
                     if ($(this).data('component') && !$contentType.find("[" + Admin.Component.Utils.ATTR_HANDLER + "]").data('creonit-component-initialized')) {
-                        $contentType.append(Admin.Component.Helpers.component($(this).data('component'), {}, {}));
+                        $contentType.append(Admin.Component.Helpers.component($(this).data('component'), { content: $(this).data('id') }, {}));
                         Admin.Component.Utils.initializeComponents($contentType, component);
                     }
                 });
