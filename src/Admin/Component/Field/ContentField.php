@@ -3,6 +3,7 @@
 namespace Creonit\ContentBundle\Admin\Component\Field;
 
 use Creonit\AdminBundle\Component\Field\Field;
+use Creonit\AdminBundle\Component\Field\NoData;
 use Creonit\AdminBundle\Component\Request\ComponentRequest;
 use Creonit\ContentBundle\Model\Content;
 use Creonit\ContentBundle\Model\ContentQuery;
@@ -41,15 +42,23 @@ class ContentField extends Field
 
     public function extract(ComponentRequest $request)
     {
-        return [
-            'id' => $id = parent::extract($request),
-            'text' => $request->data->get($this->name . '__text'),
-            'content' => $id ? ContentQuery::create()->findPk($id) : null
-        ];
+        if($id = parent::extract($request) and !$id instanceof NoData){
+            return [
+                'id' => $id,
+                'text' => $request->data->get($this->name . '__text'),
+                'content' => ContentQuery::create()->findPk($id)
+            ];
+        }else{
+            return new NoData;
+        }
     }
 
     public function save($entity, $data, $processed = false)
     {
+        if(!$data or $data instanceof NoData){
+            return;
+        }
+
         if($processed === false){
             $data = $this->process($data);
         }
@@ -62,7 +71,7 @@ class ContentField extends Field
 
     public function validate($data)
     {
-        if(null === $data['content']){
+        if(!$data instanceof NoData and null === $data['content']){
             return new ConstraintViolationList([new ConstraintViolation($message = 'Ошибка загрузки контента', $message, [], null, null, null)]);
         }
         return parent::validate($data);
