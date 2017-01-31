@@ -11,5 +11,9 @@
     "psr-4": {
       "Creonit\\ContentBundle\\": "src"
     }
+  },
+  "require": {
+    "creonit/propel-content-behavior": "^0.1.0",
+	"creonit/propel-schema-converter-bundle": "^0.1.0"
   }
 }
