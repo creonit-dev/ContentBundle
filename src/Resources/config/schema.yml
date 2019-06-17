@@ -17,6 +17,6 @@ database:
         - auto_add_pk
 
     content:
-        text: text
+        text: clob
         completed: bool = 0
         +behavior: [timestampable]
