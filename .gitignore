@@ -3,9 +3,6 @@
 /*.sublime-workspace
 thumbs.db
 
-/src/Model/Base/
-/src/Model/Map/
-/src/Resources/config/schema.xml
-
-/node_modules/
-/bower_components/
+/Model/Base/
+/Model/Map/
+/Resources/config/schema.xml

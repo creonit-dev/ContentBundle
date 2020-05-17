@@ -7,7 +7,6 @@ use Creonit\ContentBundle\Admin\Component\Field\ContentField;
 
 class ContentPlugin extends Plugin
 {
-
     protected $types = [];
 
     public function configure()
@@ -16,12 +15,12 @@ class ContentPlugin extends Plugin
         $this->addStylesheet('/bundles/creonitcontent/css/common.css');
 
         $this->addInjection('head_script', 'var CreonitContentTypes = ' . json_encode($this->types) . ';');
-        
+
         $this->addFieldType(ContentField::class);
     }
 
-    public function setType($name, $type){
+    public function setType($name, $type)
+    {
         $this->types[$name] = $type;
     }
-    
 }

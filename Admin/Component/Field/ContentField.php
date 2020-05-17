@@ -16,9 +16,10 @@ class ContentField extends Field
 
     public function load($entity)
     {
-        if($data = parent::load($entity)){
+        if ($data = parent::load($entity)) {
             return $data;
-        }else{
+
+        } else {
             $content = new Content();
             $content->save();
             return $this->decorate($content->getId());
@@ -27,7 +28,7 @@ class ContentField extends Field
 
     public function decorate($data)
     {
-        if($data){
+        if ($data) {
             $content = ContentQuery::create()->findPk($data);
 
             return [
@@ -35,31 +36,31 @@ class ContentField extends Field
                 'text' => $content->getText(),
             ];
 
-        }else{
+        } else {
             return $data;
         }
     }
 
     public function extract(ComponentRequest $request)
     {
-        if($id = parent::extract($request) and !$id instanceof NoData){
+        if ($id = parent::extract($request) and !$id instanceof NoData) {
             return [
                 'id' => $id,
                 'text' => $request->data->get($this->name . '__text'),
                 'content' => ContentQuery::create()->findPk($id)
             ];
-        }else{
+        } else {
             return new NoData;
         }
     }
 
     public function save($entity, $data, $processed = false)
     {
-        if(!$data or $data instanceof NoData){
+        if (!$data or $data instanceof NoData) {
             return;
         }
 
-        if($processed === false){
+        if ($processed === false) {
             $data = $this->process($data);
         }
 
@@ -71,11 +72,9 @@ class ContentField extends Field
 
     public function validate($data)
     {
-        if(!$data instanceof NoData and null === $data['content']){
+        if (!$data instanceof NoData and null === $data['content']) {
             return new ConstraintViolationList([new ConstraintViolation($message = 'Ошибка загрузки контента', $message, [], null, null, null)]);
         }
         return parent::validate($data);
     }
-
-
 }

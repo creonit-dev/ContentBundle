@@ -1,7 +1,0 @@
-services:
-    creonit_admin.content_plugin:
-        class: Creonit\ContentBundle\Admin\ContentPlugin
-        tags: [ {name: creonit_admin.plugin} ]
-
-    creonit_content:
-        class: Creonit\ContentBundle\CreonitContent

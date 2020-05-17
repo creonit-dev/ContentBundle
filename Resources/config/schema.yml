@@ -15,6 +15,7 @@ database:
 
     +behavior:
         - auto_add_pk
+        - \Creonit\ContentBundle\Behavior\ContentBlockBehavior
 
     content:
         text: clob

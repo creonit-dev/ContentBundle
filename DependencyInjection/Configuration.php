@@ -17,8 +17,8 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('creonit_content');
+        $treeBuilder = new TreeBuilder('creonit_content');
+        $rootNode = $treeBuilder->getRootNode();
 
         $rootNode
             ->children()

@@ -1,0 +1,230 @@
+.component-field-content-types {
+    display: inline-block;
+    font-size: 11px;
+    margin-bottom: 5px;
+}
+
+.form-group > .component-field-content-types {
+    margin-left: 10px;
+    margin-bottom: 0;
+}
+
+.component-field-content-types.is-hidden {
+    visibility: hidden;
+}
+
+.component-field-content-types a {
+    margin-right: 10px;
+}
+
+.component-field-content-types a.is-active {
+    pointer-events: none;
+    color: #999;
+    outline: none;
+    text-decoration: none;
+}
+
+.component-field-content-types a i {
+    margin-right: 3px;
+}
+
+.component-field-content-type {
+    display: none;
+}
+
+.component-field-content .dropdown-submenu {
+    position: relative;
+}
+
+.component-field-content .dropdown-submenu > .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -6px;
+    margin-left: -1px;
+}
+
+.component-field-content .dropdown-submenu:hover {
+    background-color: #f5f5f5;
+}
+
+.component-field-content .dropdown-submenu:hover > .dropdown-menu {
+    display: block;
+}
+
+.component-field-content .dropdown-submenu > a:after {
+    display: block;
+    content: " ";
+    float: right;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 5px 0 5px 5px;
+    border-left-color: #ccc;
+    margin-top: 5px;
+    margin-right: -10px;
+}
+.content-block-size-control {
+    font-size: 0;
+    counter-reset: size;
+}
+
+.content-block-size-control label, .content-block-size-control input {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+}
+
+.content-block-size-control label {
+    background: #bbb;
+    border: 1px solid #999;
+    position: relative;
+    margin-right: 4px;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: all .3s ease;
+}
+
+.content-block-size-control label::after {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin-top: -.75em;
+    text-align: center;
+    counter-increment: size;
+    content: counter(size);
+    font-size: 10px;
+    pointer-events: none;
+    color: #eee;
+    transition: all .3s ease;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, .1);
+}
+
+
+.content-block-size-control label:hover {
+    background-color: #aaa;
+    border-color: #888;
+    transition: none;
+}
+
+.content-block-size-control label:hover::after {
+    transition: none;
+}
+
+.content-block-size-control label:active {
+    background-color: #999;
+    border-color: #777;
+    transition: none;
+}
+
+.content-block-size-control label:active::after {
+    transition: none;
+}
+
+.content-block-size-control input:checked + label ~ label {
+    background: white;
+    border-color: #ccc;
+}
+.content-block-size-control input:checked + label ~ label::after {
+    color: #ccc;
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, .3);
+}
+
+.content-block-size-control input:checked + label ~ label:hover {
+    background-color: #e6e6e6;
+    border-color: #adadad;
+}
+
+.content-block-size-control input:checked + label ~ label:hover::after {
+    color: #adadad;
+}
+
+.content-block-size-control input {
+    position: absolute;
+    opacity: 0;
+}
+
+.content-block-size-control input:disabled + label {
+    border-style: dashed;
+    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.075) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.075) 50%, rgba(255, 255, 255, 0.075) 75%, transparent 75%, transparent);
+    background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.075) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.075) 50%, rgba(255, 255, 255, 0.075) 75%, transparent 75%, transparent);
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.075) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.075) 50%, rgba(255, 255, 255, 0.075) 75%, transparent 75%, transparent);
+    background-size: 10px 10px;
+    cursor: no-drop;
+    pointer-events: none;
+}
+
+.content-block-size-control label:nth-child(2), .content-block-size-control label:nth-child(2)::after {
+    transition-delay: .01s;
+}
+.content-block-size-control label:nth-child(4), .content-block-size-control label:nth-child(4)::after {
+    transition-delay: .02s;
+}
+.content-block-size-control label:nth-child(6), .content-block-size-control label:nth-child(6)::after {
+    transition-delay: .03s;
+}
+.content-block-size-control label:nth-child(8), .content-block-size-control label:nth-child(8)::after {
+    transition-delay: .04s;
+}
+.content-block-size-control label:nth-child(10), .content-block-size-control label:nth-child(10)::after {
+    transition-delay: .05s;
+}
+.content-block-size-control label:nth-child(12), .content-block-size-control label:nth-child(12)::after {
+    transition-delay: .06s;
+}
+.content-block-size-control label:nth-child(14), .content-block-size-control label:nth-child(14)::after {
+    transition-delay: .07s;
+}
+.content-block-size-control label:nth-child(16), .content-block-size-control label:nth-child(16)::after {
+    transition-delay: .08s;
+}
+.content-block-size-control label:nth-child(18), .content-block-size-control label:nth-child(18)::after {
+    transition-delay: .09s;
+}
+.content-block-size-control label:nth-child(20), .content-block-size-control label:nth-child(20)::after {
+    transition-delay: .1s;
+}
+.content-block-size-control label:nth-child(22), .content-block-size-control label:nth-child(22)::after {
+    transition-delay: .11s;
+}
+.content-block-size-control label:nth-child(24), .content-block-size-control label:nth-child(24)::after {
+    transition-delay: .12s;
+}
+
+.content-block-size-control input:checked + label ~ label:nth-last-child(1), .content-block-size-control input:checked + label ~ label:nth-last-child(1)::after {
+    transition-delay: .01s;
+}
+.content-block-size-control input:checked + label ~ label:nth-last-child(3), .content-block-size-control input:checked + label ~ label:nth-last-child(3)::after {
+    transition-delay: .02s;
+}
+.content-block-size-control input:checked + label ~ label:nth-last-child(5), .content-block-size-control input:checked + label ~ label:nth-last-child(5)::after {
+    transition-delay: .03s;
+}
+.content-block-size-control input:checked + label ~ label:nth-last-child(7), .content-block-size-control input:checked + label ~ label:nth-last-child(7)::after {
+    transition-delay: .04s;
+}
+.content-block-size-control input:checked + label ~ label:nth-last-child(9), .content-block-size-control input:checked + label ~ label:nth-last-child(9)::after {
+    transition-delay: .05s;
+}
+.content-block-size-control input:checked + label ~ label:nth-last-child(11), .content-block-size-control input:checked + label ~ label:nth-last-child(11)::after {
+    transition-delay: .06s;
+}
+.content-block-size-control input:checked + label ~ label:nth-last-child(13), .content-block-size-control input:checked + label ~ label:nth-last-child(13)::after {
+    transition-delay: .07s;
+}
+.content-block-size-control input:checked + label ~ label:nth-last-child(15), .content-block-size-control input:checked + label ~ label:nth-last-child(15)::after {
+    transition-delay: .08s;
+}
+.content-block-size-control input:checked + label ~ label:nth-last-child(17), .content-block-size-control input:checked + label ~ label:nth-last-child(17)::after {
+    transition-delay: .09s;
+}
+.content-block-size-control input:checked + label ~ label:nth-last-child(19), .content-block-size-control input:checked + label ~ label:nth-last-child(19)::after {
+    transition-delay: .1s;
+}
+.content-block-size-control input:checked + label ~ label:nth-last-child(21), .content-block-size-control input:checked + label ~ label:nth-last-child(21)::after {
+    transition-delay: .11s;
+}
+.content-block-size-control input:checked + label ~ label:nth-last-child(23), .content-block-size-control input:checked + label ~ label:nth-last-child(23)::after {
+    transition-delay: .12s;
+}

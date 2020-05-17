@@ -51,8 +51,9 @@ var Creonit;
                 });
                 if (component.parameters[("content_type_" + $component.data('name'))]) {
                     $types.filter("[data-name=" + component.parameters[("content_type_" + $component.data('name'))] + "]").click();
-                }
-                else {
+                } else if ($contentTypes.filter('[data-name="text"]').find('textarea.text-editor').is(function(i, element){ return !!element.value; })) {
+                    $types.filter('[data-name="text"]').eq(0).click();
+                } else {
                     $types.eq(0).click();
                 }
             });
